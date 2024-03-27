@@ -7,9 +7,7 @@ import sys
 import os
 from classes.NoteWindow import NoteWindow
 from classes.NoteListWindow import NoteListWindow
-import win32api
-import win32con
-import win32gui
+
 class Tray:
     def __init__(self):
         self._get_path()
