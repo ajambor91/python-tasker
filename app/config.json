@@ -1,0 +1,6 @@
+{
+  "appName": "PyNote",
+  "defaultPort": 7676,
+  "appdataDir": "notes",
+  "lockFileName": ".lock"
+}
