@@ -1,6 +1,9 @@
 import os
 import json
 user_home_path = os.path.expanduser("~")
+
+
+
 def get_path(file):
     print('FILEEEE', __file__)
     __location__ = os.path.realpath(os.path.join(os.getcwd()))
