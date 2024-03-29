@@ -6,7 +6,7 @@ import sys
 import os
 from classes.NoteWindow import NoteWindow
 from classes.NoteListWindow import NoteListWindow
-
+from classes.CanvasArea import CanvasArea
 class Tray:
     def __init__(self):
         self.icon_path = get_path('resources\\tray_temp.ico')
@@ -14,10 +14,11 @@ class Tray:
     def _get_path(self):
         self.icon_path = os.path.abspath(os.path.join(sys.path[0], 'resources\\tray_temp.ico'))
     def _action(self):
-        new_window = NoteWindow()
+        # new_window = NoteWindow(self.window)
         pass
     def _create_notes_window(self):
         self.note_list = NoteListWindow()
+        # self.note_list = CanvasArea(self.window)
         pass
     def create_icon(self):
         image = ImageIcon.open(self.icon_path)

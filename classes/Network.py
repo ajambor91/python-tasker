@@ -8,14 +8,11 @@ class Network:
 
     def __init__(self):
         self.hostname = socket.gethostname()
-        print(self.hostname)
         self.ip = socket.gethostbyname(self.hostname)
         self.interfaces = netifaces.interfaces()
-        print(self.ip)
-        print(self.interfaces)
+
         # self.network_addr = ipaddress.ip_interface(f"{ip}/{subnet_mask}").network
         self.network_addr = ipaddress.IPv4Network.broadcast_address
-        print(self.network_addr)
         self.get_interfaces_info()
         self.calculate_broadcast()
         self.br = Broadcast()
@@ -26,13 +23,11 @@ class Network:
         for interface in self.interfaces_details_list:
             ip_int = self.convert_adresses_to_bin(interface.get('ip'))
             mask_int = self.convert_adresses_to_bin(interface.get('subnet_mask'))
-            print('sssssssssss')
 
             binary_broadcast = self.calculate_broadcast_bin(mask_int, mask_int)
             # decimal_broadcast = self.binary_to_decimal(binary_broadcast)
 
             decimal_broadcast = self.binary_to_ip(binary_broadcast)
-            print(decimal_broadcast)
             self.broadcast_addresses.append(decimal_broadcast)
 
     def get_interfaces_info(self):
@@ -48,7 +43,6 @@ class Network:
                             'ip': details.get('addr'),
                             'subnet_mask': details.get('netmask')
                         })
-                        print(self.interfaces_details_list)
 
         except ValueError:
             print(ValueError)
@@ -68,7 +62,6 @@ class Network:
                                            zip(ip_binary, inverted_subnet_mask))
         return broadcast_address_binary
     def binary_to_decimal(self, binary_data):
-        print('binary dddd',  binary_data)
         return int(binary_data, 2)
 
     def binary_to_ip(self,binary_address):

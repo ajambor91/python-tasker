@@ -1,21 +1,31 @@
 import tkinter
 from tkinter import *
 from classes.XML import XMLParser
-class NoteListWindow:
+from classes.CanvasArea import CanvasArea
+class NoteListWindow(Tk):
     def __init__(self):
-        self.window = Tk()
-        self.window.configure(bg='#fff')
-        self.window.overrideredirect(True)
-        # add widgets here
+        super().__init__()
+        self.__run__()
 
-        # self.window.title('Hello Python')
-        self.window.geometry("400x200-10-20")
-        self.parse_notes()
-        self.window.mainloop()
-        self.window.wait_visibility()
-    def parse_notes(self):
+
+    def __parse_notes__(self):
+        return self.xmlParser.parse_file()
+    def __create_notes__(self):
+        self.canvases = []
+        print(self.notes)
+        for note in self.notes:
+            print('xxx')
+            self.canvases.append(CanvasArea(self, note))
+            # tkinter.Label(self.window, text=note).pack()
+        self.mainloop()
+
+    def __run__(self):
+        self.overrideredirect(True)
+        self.lift()
+        self.wm_attributes("-topmost", True)
+        self.wm_attributes("-transparentcolor", 'gray')
+        self.wait_visibility()
+        self.geometry("400x300-0-0")
         self.xmlParser = XMLParser()
-        list = self.xmlParser.parse_file()
-        for note in list:
-            print('x',note)
-            tkinter.Label(self.window, text=note).pack()
+        self.notes = self.__parse_notes__()
+        self.__create_notes__()

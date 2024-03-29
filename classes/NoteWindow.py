@@ -1,12 +1,12 @@
 from tkinter import *
 from classes.XML import XMLParser
 class NoteWindow:
-    def __init__(self):
-        self.window = Tk()
+    def __init__(self, window):
+        self.window = window
         # add widgets here
 
         self.window.title('Hello Python')
-        self.window.geometry("300x200+10+20")
+        # self.window.geometry("300x200+10+20")
         self.create_text_area()
         self.add_submit_button()
         self.window.mainloop()
