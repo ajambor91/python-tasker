@@ -10,7 +10,7 @@ class XMLParser(object):
             cls.instance = super(XMLParser, cls).__new__(cls)
         return cls.instance
     def parse_data(self, data):
-        # print(data)
+        print(data)
         # print(self.user_home_path)
         note = gfg.SubElement(self.root, 'note', id='note')
         # noteXml.attrib = 'data'
