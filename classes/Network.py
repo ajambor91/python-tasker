@@ -1,8 +1,13 @@
 import struct
 import ipaddress
 import socket
+import time
+
 import netifaces
 from classes.Broadcast import Broadcast
+from classes.Listen import Listen
+
+
 class Network:
 
 
@@ -16,7 +21,11 @@ class Network:
         self.get_interfaces_info()
         self.calculate_broadcast()
         self.br = Broadcast()
-        self.br.send_broadcast_packet(self.broadcast_addresses[0], port=7676)
+        self.listen = Listen()
+
+        for i in range(1,50):
+            self.br.send_broadcast_packet(self.broadcast_addresses[0], port=7676)
+            time.sleep(1)
 
     def calculate_broadcast(self):
         self.broadcast_addresses = list()

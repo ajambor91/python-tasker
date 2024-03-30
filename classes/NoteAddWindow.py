@@ -1,6 +1,7 @@
 from tkinter import *
 from classes.NoteAddCanvas import NoteAddCanvas
 from services.NotesService import NotesService
+from app.utils import hide_window_from_taskbar
 class NoteAddWindow(Tk):
     WINDOW_WIDTH = 400
     WINDOW_HEIGHT = 250
@@ -8,10 +9,14 @@ class NoteAddWindow(Tk):
     Y_CORD = 60
     def __init__(self):
         super().__init__()
-        self.note_add_canvas = NoteAddCanvas(self)
-        self.__run()
-        self.mainloop()
         self.notes_service = NotesService()
+        self.note_add_canvas = NoteAddCanvas(self)
+
+        self.__run()
+        hide_window_from_taskbar(self)
+
+
+        self.mainloop()
         # self.wait_visibility()
 
     def on_save_action(self):
