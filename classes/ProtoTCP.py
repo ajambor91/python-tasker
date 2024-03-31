@@ -28,6 +28,7 @@ class ProtoTCP:
             while True:
                 # Odbieranie danych
                 data_received = conn.recv(1024)
+                self.socket.sendall('RECEIVED_DATA')
                 if not data_received:
                     break
                 print('Odebrano:', data_received.decode())
