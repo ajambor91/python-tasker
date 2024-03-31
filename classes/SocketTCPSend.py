@@ -9,7 +9,7 @@ class SocketTCPSend:
         self.__connect()
 
     def __connect(self):
-
+        print("PORTY", self.host, self.config.get('tcpSendPort'))
         self.socket.connect((self.host, self.config.get('tcpSendPort')))
 
     def send_data(self, data):

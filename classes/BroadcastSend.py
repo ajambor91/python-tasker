@@ -4,7 +4,7 @@ import time
 
 from app.init import get_config
 import threading
-class Broadcast:
+class BroadcastSend:
     import socket
 
     def __init__(self):
