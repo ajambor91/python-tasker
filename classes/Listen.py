@@ -14,6 +14,7 @@ class Listen:
         self.udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.udp_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.udp_socket.bind(('0.0.0.0', self.config.get('defaultPort')))
+        print(self.config.get('defaultPort'))
         self.worker = threading.Thread(target= lambda: self.__listen())
     def __listen(self):
         while True:

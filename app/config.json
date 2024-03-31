@@ -2,6 +2,8 @@
   "appUuid": "24494392-64d2-4b2e-9341-166d568daee7",
   "appName": "PyNote",
   "defaultPort": 7676,
+  "tcpListenPort":7677,
+  "tcpSendPort": 7678,
   "appdataDir": "notes",
   "lockFileName": ".lock",
   "welcomeMsg":  "app-pynote"
