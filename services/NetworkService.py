@@ -1,7 +1,7 @@
 from classes.SocketTCPSend import SocketTCPSend
 from classes.SocketTCPRec import SocketTCPRec
 #from services.NotesService import NotesService
-from services.XML import XMLParser
+from services.XMLParser import XMLParser
 class NetworkService(object):
 
 

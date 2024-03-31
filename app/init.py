@@ -3,7 +3,12 @@ import json
 user_home_path = os.path.expanduser("~")
 
 
-
+def get_app_data(file=None):
+    print('()()()()()()()())()()()()())()()()()',user_home_path)
+    if isinstance(file, str):
+        return os.path.join(user_home_path, 'AppData\\Local\\notes',  file)
+    else:
+        return os.path.join(user_home_path, 'AppData\\Local\\notes')
 def get_path(file):
     __location__ = os.path.realpath(os.path.join(os.getcwd()))
     return  os.path.join(__location__, file)

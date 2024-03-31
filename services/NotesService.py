@@ -1,4 +1,4 @@
-from services.XML import XMLParser
+from services.XMLParser import XMLParser
 from services.NetworkService import NetworkService
 class NotesService(object):
 

@@ -1,10 +1,11 @@
 import os
 import xml.etree.ElementTree as gfg
+from app.init import get_app_data
 class XMLParser(object):
-    user_home_path = os.path.expanduser("~")
-    notes = '\\notes.xml'
-    root = gfg.Element('root')
 
+    def __init__(self):
+        self.notes = get_app_data('notes.xml')
+        self.root = gfg.Element('root')
     def __new__(cls):
         if not hasattr(cls, 'instance'):
             cls.instance = super(XMLParser, cls).__new__(cls)
@@ -14,13 +15,11 @@ class XMLParser(object):
         note = gfg.SubElement(self.root, 'note', id='note')
         note.text = data
         tree = gfg.ElementTree(self.root)
-        path = self.user_home_path + self.notes
-        with open (path, "wb") as files :
+        with open (self.notes, "wb") as files :
             tree.write(files)
 
     def parse_file(self):
-        path = self.user_home_path + self.notes
-        tree = gfg.parse(path)
+        tree = gfg.parse(self.notes)
         root = tree.getroot()
         notes_list = list()
         for child in root:
