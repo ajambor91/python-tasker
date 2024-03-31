@@ -13,7 +13,6 @@ class NoteAddWindow(Tk):
         self.note_add_canvas = NoteAddCanvas(self)
 
         self.__run()
-        hide_window_from_taskbar(self)
 
 
         self.mainloop()

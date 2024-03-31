@@ -21,11 +21,11 @@ class Network:
         self.get_interfaces_info()
         self.calculate_broadcast()
         self.br = Broadcast()
-        self.listen = Listen()
+        self.listen = Listen(self)
 
-        for i in range(1,50):
-            self.br.send_broadcast_packet(self.broadcast_addresses[0], port=7676)
-            time.sleep(1)
+        # for i in range(1,5):
+        #     self.br.send_broadcast_packet(self.broadcast_addresses[0], port=7676)
+        #     time.sleep(1)
 
     def calculate_broadcast(self):
         self.broadcast_addresses = list()

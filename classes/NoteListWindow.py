@@ -7,7 +7,6 @@ class NoteListWindow(Tk):
     def __init__(self):
         super().__init__()
         self.notes_service = NotesService()
-        hide_window_from_taskbar(self)
         self.__run()
         self.notes = self.__parse_notes()
         self.__create_notes()
