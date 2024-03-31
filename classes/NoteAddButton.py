@@ -18,12 +18,9 @@ class NoteAddButton(Button):
         self.window = window
         self.root = root
     def __run(self):
-        print('dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
         self.configure(width = 10, activebackground = "#33B5E5", relief = FLAT)
-        # self.pack()
 
 
     def __save_note(self):
-        print('SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
         self.window.on_save_action()
         pass

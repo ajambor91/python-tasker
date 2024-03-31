@@ -3,7 +3,6 @@ from app.utils import round_rectangle
 from classes.NoteListLabel import NoteListLabel
 
 class NoteListCanvas(Canvas):
-     # background_color = '#fff'
      height = 300
      width = 400
      def __init__(self, window, text):

@@ -1,7 +1,5 @@
-from tkinter import *
 from classes.Tray import Tray
-# from classes.NoteListWindow import NoteListWindow
-# from classes.NoteAddWindow import NoteWindow
+
 class Top():
     def __init__(self):
         self.app_tray = Tray()

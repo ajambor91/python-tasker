@@ -9,7 +9,6 @@ class NetworkService(object):
             cls.instance = super(NetworkService, cls).__new__(cls)
         return cls.instance
     def add_addr(self, addr):
-        print('******************************')
         self._send_sockets.append(SocketTCPSend(addr))
     def start_listen(self, ip):
         self.listen_socket =  SocketTCPRec(ip)

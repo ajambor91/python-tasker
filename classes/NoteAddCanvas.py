@@ -35,5 +35,4 @@ class NoteAddCanvas(Canvas):
         pass
     def _get_note_content(self):
         text = self.text_area.get("1.0", "end-1c")
-        print('DSDASDSDSD', text)
         return text

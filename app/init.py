@@ -16,7 +16,6 @@ def get_config():
     config = json.load(config_file)
     return config
 
-# config = get_config()
 def lock_app():
     config = get_config()
     lock_path = os.path.join(user_home_path, config.get('appdataDir'), config.get('lockFileName'))

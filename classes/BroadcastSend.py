@@ -5,8 +5,6 @@ import time
 from app.init import get_config
 import threading
 class BroadcastSend:
-    import socket
-
     def __init__(self):
         self.config = get_config()
         self.__set_broadcast()
@@ -19,19 +17,6 @@ class BroadcastSend:
     def __run(self):
         self.worker.start()
     def __broadcast(self):
-        # Tworzenie gniazda UDP
         while True:
             time.sleep(1)
             self.udp_socket.sendto(self.config.get("appUuid").encode(), ("255.255.255.255", self.config.get('defaultPort')))
-
-        # Wysyłanie wiadomości na adres broadcast
-
-        # Zamykanie gniazda
-        # self.udp_socket.close()
-
-        # if __name__ == "__main__":
-        #     broadcast_address = "255.255.255.255"  # Adres broadcast
-        #     port = 12345  # Port, na którym chcesz wysłać wiadomość
-        #     message = "Hello, world!"  # Wiadomość do wysłania
-        #
-        #     self.send_broadcast_packet(broadcast_address, port, message)

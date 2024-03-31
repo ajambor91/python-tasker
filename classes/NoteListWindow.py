@@ -1,7 +1,6 @@
 from tkinter import Tk
 from classes.NoteListCanvas import NoteListCanvas
 from services.NotesService import NotesService
-from app.utils import hide_window_from_taskbar
 
 class NoteListWindow(Tk):
     def __init__(self):
@@ -16,9 +15,7 @@ class NoteListWindow(Tk):
         self.canvases = []
         print(self.notes)
         for note in self.notes:
-            print('xxx')
             self.canvases.append(NoteListCanvas(self, note))
-            # tkinter.Label(self.window, text=note).pack()
         self.mainloop()
 
     def __run(self):

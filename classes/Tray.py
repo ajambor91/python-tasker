@@ -9,15 +9,11 @@ from classes.NoteAddWindow import NoteAddWindow
 class Tray:
     def __init__(self):
         self.icon_path = get_path('resources\\tray_temp.ico')
-
-    def _get_path(self):
-        self.icon_path = os.path.abspath(os.path.join(sys.path[0], 'resources\\tray_temp.ico'))
     def _add_note(self):
         new_window = NoteAddWindow()
         pass
     def _create_notes_window(self):
         self.note_list = NoteListWindow()
-        # self.note_list = CanvasArea(self.window)
         pass
     def create_icon(self):
         image = ImageIcon.open(self.icon_path)
