@@ -1,12 +1,12 @@
 import socket
 
-from services.NetworkService import NetworkService
+#from services.NetworkService import NetworkService
 from app.init import get_config
 import threading
 class SocketTCPRec:
 
     def __init__(self, host):
-        self._network_services = NetworkService()
+        # self._network_services = NetworkService()
         self.worker = threading.Thread(target=lambda: self.__start_listening())
         self.host = host
         self.config = get_config()
