@@ -10,6 +10,7 @@ class Tray:
     def __init__(self):
         self.icon_path = get_path('resources\\tray_temp.ico')
     def _add_note(self):
+        print('ADDD')
         new_window = NoteAddWindow()
         pass
     def _create_notes_window(self):

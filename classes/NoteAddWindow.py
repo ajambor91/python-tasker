@@ -26,3 +26,4 @@ class NoteAddWindow(Tk):
         self.wm_attributes("-transparentcolor", 'gray')
         self.wait_visibility()
         self.geometry(f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}-{self.X_CORD}-{self.Y_CORD}")
+        self.mainloop()

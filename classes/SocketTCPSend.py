@@ -14,7 +14,7 @@ class SocketTCPSend:
 
     def send_data(self, data):
         if self.socket:
-            self.socket.sendall(data)
+            self.socket.sendall(data.encode())
 
     def close_connection(self):
         if self.socket:

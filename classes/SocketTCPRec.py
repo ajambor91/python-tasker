@@ -1,11 +1,12 @@
 import socket
-import threading
 
+from services.NetworkService import NetworkService
 from app.init import get_config
 import threading
 class SocketTCPRec:
 
     def __init__(self, host):
+        self._network_services = NetworkService()
         self.worker = threading.Thread(target=lambda: self.__start_listening())
         self.host = host
         self.config = get_config()
@@ -24,7 +25,9 @@ class SocketTCPRec:
             client_socket, client_address = self.server_socket.accept()
             print(f"Połączenie nawiązane z {client_address}")
             print(f"Dane: {client_socket.recv(1024).decode()}")
-            client_socket.close()
+            data = client_socket.recv(1024)
+            self._network_services.receive_msg(data)
+            # client_socket.close()
 
 
 
