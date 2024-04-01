@@ -18,4 +18,4 @@ class AppMainWindow(Tk):
     def __add_user_tab(self):
 
         self.notebook.add(AppMainWindowUserTab(self), text='User')
-        self.notebook.pack()
+        self.notebook.grid(column=0, row=0, padx=2, pady=2)

@@ -16,7 +16,8 @@ def get_file(file):
     __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
     return  os.path.join(__location__, file)
 def get_config():
-    config_file_path = get_file('config.json');
+    # config_file_path = get_file('config.json');
+    config_file_path = 'C:\\PROJECTS\\PYTHON\\NOTES\\NOTES\\app\\config.json'
     config_file = open(config_file_path)
     config = json.load(config_file)
     return config
